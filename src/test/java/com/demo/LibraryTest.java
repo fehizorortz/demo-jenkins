@@ -58,4 +58,20 @@ public class LibraryTest {
         assertNotNull(book);
         assertEquals("George Orwell", book.getAuthor());
     }
+
+    @Test
+    public void testBookToString() {
+        Book book = new Book("Test Book", "Test Author");
+        assertTrue(book.toString().contains("Test Book"));
+        assertTrue(book.toString().contains("Test Author"));
+        assertTrue(book.toString().contains("disponible"));
+    }
+
+    @Test
+    public void testBookGetters() {
+        Book book = new Book("Dune", "Frank Herbert");
+        assertEquals("Dune", book.getTitle());
+        assertEquals("Frank Herbert", book.getAuthor());
+        assertFalse(book.isBorrowed());
+    }
 }
